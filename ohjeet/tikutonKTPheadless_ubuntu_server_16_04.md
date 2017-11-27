@@ -28,7 +28,7 @@ Pakettien asentamisen jälkeen aletaan konfiguroida järjestelmää.
 Suorita komento `ip addr show` selvittääksesi järjestelmän käytössä olevien verkkokorttien
 nimet. Ota korttien numerot ja nimet ylös. Tässä dokumentaatiossa nämä kortit nimetään seuraavasti:
 1. `lo` -- local loopback verkkokortti
-2. `eth0` -- Etäkäyttöverkon verkkokortti
+2. `eth0` -- Etäkäyttöverkon verkkokortti
 3. `eth1` -- Abittiverkon verkkokortti
 
 Seuraavaksi avaa verkkokonfiguraatiotiedosto komennolla:
@@ -165,9 +165,11 @@ ssh -N -T -L 5900:localhost:5900 <käyttäjänimi>@<palvelimen ip osoite>
 ```
 Windows -tietokoneissa tarvitset ssh -etäyhteystyökalun esimerkiksi putty:n. Tunnelin luomista varten tutustu putty:n ohjeisiin.
 
-Nyt voit avata etähallintakoneella VNC -yhteyden osoitteeseen localhost, jonka VNC -porttiin 5900 on tunneloitu palvelimen VNC palvelimen portti. VNC ohjelmistoja ovat esimerkiksi RealVNC, joka on saatavilla kaikille yleisille koneille.
+Nyt voit avata etähallintakoneella VNC -yhteyden osoitteeseen localhost, jolloin saat yhteyden palvelimen VNC -ohjelmistoon. Huomioi, että ssh yhteys, joka teki porttitunneloinnin tulee pitää auki koko VNC session ajan.
 
-Mikäli kaikki on mennyt oikein tulisi VNC -ohjelmiston avata musta ruutu etäyhteyden merkiksi. VNC -ohjelmisto antaa todennäköisesti varoituksen, että yhteys on salaamaton, mutta tästä varoituksesta ei tarvitse välittää, koska ssh tunneli hoitaa liikenteen salauksen.
+VNC ohjelmistoja ovat esimerkiksi RealVNC, joka on saatavilla kaikille yleisille koneille.
+
+Mikäli kaikki on mennyt oikein tulisi VNC -ohjelmiston avata musta ruutu etäyhteyden merkiksi. VNC -ohjelmisto antaa todennäköisesti varoituksen, että yhteys on salaamaton. Varoituksen voi jäättää huomioimatta, koska ssh yhteys salaa VNC:n yli tapahtuvan liikenteen.
 
 VNC -palvelu pysyy päällä niin pitkään, kuin kone on päällä. Uudelleenkäynnistyksen jälkeen VNC -palvelin saadaa pyörimään komennolla:
 ``` shell
@@ -211,7 +213,7 @@ Nyt sulje ja tallenna muokattu tiedosto.
 
 Asetustiedoston muokkaamisen lisäksi tulee käyttäjästä tehdä erikseen samba -käyttäjä. Tämä tapahtuu komennolla:
 ```shell
-smbpasswd -a <käyttäjänimi>
+smbpasswd -a käyttäjänimi
 ```
 
 Lopuksi käynnistetään samba -tiedostojakopalvelu uudestaan komennolla:
