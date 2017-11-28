@@ -1,4 +1,6 @@
 # Headless-tikuton-ktp
-Ohjeet etähallittavan tikuttoman koetilan palvelimen tekemiseen abitti järjestelmässä.
+Ohjeet etähallittavan tikuttoman koetilan palvelimen tekemiseen abitti järejstelmään
 
-Varsinaiset ohjeet löytyvät kansiosta ohjeet ja skriptit kansiosta src
+Reposta löytyy käytetyt skriptit ja wikin alta ohjeet.
+
+Ota yhteyttä jos olet tehnyt jotain vastaavaa toisella alustalla, ja haluat jakaa sen muille.
