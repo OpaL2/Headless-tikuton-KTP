@@ -1,0 +1,9 @@
+[Unit]
+Description=x11VNC service for abitti
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/x11vnc -display :1 -nopw -listen localhost -xkb -forever -shared
+
+[Install]
+WantedBy=multi-user.target
